@@ -19,22 +19,25 @@ $(document).ready(function(){
         method: "GET"
     }).then(function(res){
    
-        var ress = res.response.docs
+        var ress = res.response.docs;
        
         for(var i = 0; i < ress.length; i++){
-            console.log(ress[i])
+            console.log(ress[i]);
             var otro = ress[i].byline.original;
             var esto = ress[i].headline.main;
             var $lista = $("<ul>");
             var poruno = $("<li>");
-            $lista.addClass("list-group articleHeadline");
-            poruno.addClass( "list-group-item articleHeadline" )
-            $("#apme").append($lista)
-            $lista.append(esto)
-        poruno.append(otro)
-       
-        $lista.append(poruno)
-      
+            $lista.addClass("list-group");
+             poruno.addClass("list-group-item articleHeadline")
+            
+            
+            poruno.append("<strong> " + esto  + "</strong>")
+            poruno.append($lista)
+            poruno.append(otro)     
+           
+            $("#apme").append(poruno)
+            
+            
         }
        
     })
