@@ -22,16 +22,19 @@ $(document).ready(function(){
         var ress = res.response.docs
        
         for(var i = 0; i < ress.length; i++){
+            console.log(ress[i])
+            var otro = ress[i].byline.original;
             var esto = ress[i].headline.main;
             var $lista = $("<ul>");
-            $lista.addClass("list-group");
+            var poruno = $("<li>");
+            $lista.addClass("list-group articleHeadline");
+            poruno.addClass( "list-group-item articleHeadline" )
             $("#apme").append($lista)
             $lista.append(esto)
-            // console.log(typeof lista)
-            // lista.append("<li>" + JSON.stringify(esto ) + "</li>")
-            
-            // canva.append("<li>" + JSON.stringify(esto ) + "</li>" + "<br>")
-             
+        poruno.append(otro)
+       
+        $lista.append(poruno)
+      
         }
        
     })
