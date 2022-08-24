@@ -80,8 +80,9 @@ function searchForMe() {
 
 function borraResultados() {
   $("#apme").empty();
-}
-function clickSelector() {}
+ 
+};
+function clickSelector() {};
 
 $(document).ready(function () {
   document.addEventListener("submit", function (event) {
